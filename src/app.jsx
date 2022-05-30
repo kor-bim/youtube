@@ -11,9 +11,10 @@ function App() {
             redirect: 'follow'
         };
 
-        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyBCOWxTkgw40MnM9FhU5kU1h55RG9uV_94`, requestOptions)
+        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=AIzaSyBCOWxTkgw40MnM9FhU5kU1h55RG9uV_94`, requestOptions)
             .then(response => response.json())
-            .then(result => setVideos(result.items))
+            .then(result => result.items.map(item => ({...item, id: item.id.videoId})))
+            .then(items => setVideos(items))
             .catch(error => console.log('error', error));
     }
 
