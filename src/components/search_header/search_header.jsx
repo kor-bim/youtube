@@ -1,12 +1,11 @@
 import React, {useRef} from 'react';
 import styles from './search_header.module.css';
 
-const SearchHeader = () => {
+const SearchHeader = ({onSearch}) => {
     const inputRef = useRef();
     const handleSearch = () => {
         const value = inputRef.current.value;
-        console.log(value);
-        // onSearch(value);
+        onSearch(value);
     }
 
     const onKeyDown = (event) => {
