@@ -11,6 +11,7 @@ function App({youtube}) {
     }
 
     useEffect(() => {
+        // noinspection JSCheckFunctionSignatures
         youtube.mostPopular()
             .then(videos => setVideos(videos));
     }, [youtube]);
