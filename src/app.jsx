@@ -8,9 +8,9 @@ function App({youtube}) {
     const [videos, setVideos] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState(null);
 
-    const selectVideo = video => {
+    const selectVideo = useCallback(video => {
         setSelectedVideo(video);
-    };
+    }, []);
 
     const search = useCallback(query => {
         setSelectedVideo(null);
