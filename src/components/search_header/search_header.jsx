@@ -16,6 +16,7 @@ const SearchHeader = ({onSearch}) => {
             handleSearch();
         }
     };
+    console.log('sdf')
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
